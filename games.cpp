@@ -81,20 +81,41 @@ int playRockPaperScissors()
     }
     return 0;
 }
-int blackJack(){
+void blackJack(){
     string user_choice;
     string computer_choice;
     bool running = true;
     bool first_game = false;
-    string suits[4] = {"hearts","diamonds","spades","clubs"};
+    string suits[4] = {" of hearts"," of diamonds"," of spades"," of clubs"};
     string noNumCards_cards[4] = {"Jack","Queen","King","Ace"};
+    int user_score = 0;
+    int computer_score = 0;
+    int starting_deck[52];
+    for(int i=0;i<13;i++){
+        for(int j=0;j<4;j++){
+            if(i == 0){
+                starting_deck[i * 4 + j] = 11;
+            }
+            else if(i >= 9 ){
+                starting_deck[i * 4 + j] = 10;
+            }
+            else {
+                starting_deck[i * 4 + j] = i + 1;
+            }
+
+        }
+    }
+    for (int i=0; i<52; i++){
+        cout << starting_deck[i] << endl;
+    }
+
 }
 // This is the main loop
 int main(){
     bool game_exit = false;
     do {
         string game_choice;
-        cout << "What game would you like to play? (type menu to see all options)" << endl;
+        cout << "What game would you like to play? (type 'menu' to see all options)" << endl;
         cin >> game_choice;
         if (game_choice == "menu"){
             cout << "Rock Paper Scissors -- Type: rps" << endl;
@@ -102,6 +123,9 @@ int main(){
         }
         else if (game_choice == "rps"){
             playRockPaperScissors();
+        }
+        else if (game_choice == "blj"){
+            blackJack();
         }
         else if (game_choice == "exit"){
             cout << "Ok, see you next time!" << endl;
