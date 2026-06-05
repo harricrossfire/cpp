@@ -1,0 +1,40 @@
+# Ignore compiled executables
+*.out
+*.exe
+*.o
+
+# Ignore object files
+*.obj
+
+# Ignore backup files
+*~
+*.bak
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+
+# Ignore produced files
+*.txt
+*.csv
+*.json
+*.xml
+*.html
+*.pdf
+*.docx
+
+# Ignore directories
+updates/
+journal/
+
+# Ignore compiled files
+file_reader
+file_writer
+filereader
+filewriter
+filemanager
+fileManager
+filemanger
+loadingbar
